@@ -1,4 +1,4 @@
-<%= form_for(@user, :html=>{:method=>:put}) do |f| %>
+<%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :uri %><br>
+    <%= f.text_field :uri %>
+  </div>
+  <div class="field">
     <%= f.label :username %><br>
     <%= f.text_field :username %>
   </div>
@@ -20,21 +24,18 @@
     <%= f.text_field :password %>
   </div>
   <div class="field">
+    <%= f.label :realname %><br>
+    <%= f.text_field :realname %>
+  </div>
+  <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
     <%= f.label :publicvisible %><br>
-    <%= f.text_field :publicvisible %>
-  </div>
-  <div class="field">
-    <%= f.label :realname %><br>
-    <%= f.text_field :realname %>
+    <%= f.number_field :publicvisible %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-
-
-

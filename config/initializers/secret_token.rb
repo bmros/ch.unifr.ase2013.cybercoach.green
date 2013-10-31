@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Users::Application.config.secret_key_base = 'e338681b29d98dcbea9955864c8261727f2d43a0d070cc5272e448649fcae50ea9387f6aa051b8a6d8149c124d1c698e8175880f066384b6e9e8cdbc820352e5'
+Cybercoach::Application.config.secret_key_base = '88cfde344b62988b52dbefbf0747b255a0c6abbe1ca6d9cecabbaaaeb24aee84fa03fc7a3fafe4878a0afc7c9fd1cd89eb7cd309637bc9abec405e1d76d4bd47'

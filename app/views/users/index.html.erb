@@ -3,8 +3,12 @@
 <table>
   <thead>
     <tr>
+      <th>Uri</th>
       <th>Username</th>
       <th>Password</th>
+      <th>Realname</th>
+      <th>Email</th>
+      <th>Publicvisible</th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,7 +18,12 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= user.uri %></td>
         <td><%= user.username %></td>
+        <td><%= user.password %></td>
+        <td><%= user.realname %></td>
+        <td><%= user.email %></td>
+        <td><%= user.publicvisible %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,16 +35,3 @@
 <br>
 
 <%= link_to 'New User', new_user_path %>
-
-
-<h1>Debug</h1>
-    <% @users.each do |user| %>
-<%= user.username.inspect %>
-<hr />
-
-    <% end %>
-
-
-
-
-

@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Uri:</strong>
+  <%= @user.uri %>
+</p>
+
+<p>
   <strong>Username:</strong>
   <%= @user.username %>
 </p>
@@ -10,22 +15,20 @@
   <%= @user.password %>
 </p>
 
+<p>
+  <strong>Realname:</strong>
+  <%= @user.realname %>
+</p>
 
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
 
-
+<p>
+  <strong>Publicvisible:</strong>
+  <%= @user.publicvisible %>
+</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
-
-
-
-
-
-<hr />
-
-<% if @user.password == "*" %>
-<p>ok</p>
-<% else %>
-<p>wrong</p>
-<% end %>	
-<hr />

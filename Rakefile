@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Users::Application.load_tasks
+Cybercoach::Application.load_tasks

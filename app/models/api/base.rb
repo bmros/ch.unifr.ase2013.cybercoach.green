@@ -6,7 +6,6 @@ class Api::Base < ActiveResource::Base
   self.user = "admin"
   self.password = "4dm1n1d"
   self.format = :json
-  self.primary_key = 'username'
 
 
   #### Or this
