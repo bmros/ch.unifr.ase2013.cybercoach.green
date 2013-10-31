@@ -11,17 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131031154625) do
+ActiveRecord::Schema.define(version: 20131031175318) do
 
   create_table "sessions", force: true do |t|
     t.string   "password"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sports", force: true do |t|
-    t.string   "uri"
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -36,16 +29,5 @@ ActiveRecord::Schema.define(version: 20131031154625) do
 
   add_index "trainings", ["sport_id"], name: "index_trainings_on_sport_id"
   add_index "trainings", ["user_id"], name: "index_trainings_on_user_id"
-
-  create_table "users", force: true do |t|
-    t.string   "uri"
-    t.string   "username"
-    t.string   "password"
-    t.string   "realname"
-    t.string   "email"
-    t.integer  "publicvisible"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end
