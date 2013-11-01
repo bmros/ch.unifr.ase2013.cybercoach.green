@@ -3,8 +3,8 @@ class Api::Base < ActiveResource::Base
   #self.site = 'http://diufpc46.unifr.ch:8080'
   #self.prefix = ''
   #### Either this
-  self.user = "admin"
-  self.password = "4dm1n1d"
+  #self.user = "admin"
+  #self.password = "4dm1n1d"
   self.format = :json
 
 
