@@ -1,10 +1,15 @@
 class Api::Base < ActiveResource::Base
-  self.site='http://diufvm31.unifr.ch:8090/CyberCoachServer/resources/'
+  #self.site='http://diufvm31.unifr.ch:8090/CyberCoachServer/resources/'
   #self.site = 'http://diufpc46.unifr.ch:8080'
   #self.prefix = ''
   #### Either this
-  #self.user = "admin"
-  #self.password = "4dm1n1d"
+  self.user = "abbbbb"
+  self.password = "a"
+  
+  self.site='http://diufvm31.unifr.ch:8090'
+  self.prefix = '/CyberCoachServer/resources/'
+  
+  
   self.format = :json
 
 

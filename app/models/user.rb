@@ -1,6 +1,7 @@
 require 'active_resource'
 
 class User < Api::Base
+  self.prefix = '/CyberCoachServer/resources/'
 
   self.primary_key = 'username'
 
