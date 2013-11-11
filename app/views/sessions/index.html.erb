@@ -1,9 +1,9 @@
-<h1>Listing sessions</h1>
+<h1>Listing users</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Password</th>
+      <th>Uri</th>
       <th>Username</th>
       <th></th>
       <th></th>
@@ -12,13 +12,13 @@
   </thead>
 
   <tbody>
-    <% @sessions.each do |session| %>
+    <% @users.each do |user| %>
       <tr>
-        <td><%= session.password %></td>
-        <td><%= session.username %></td>
-        <td><%= link_to 'Show', session %></td>
-        <td><%= link_to 'Edit', edit_session_path(session) %></td>
-        <td><%= link_to 'Destroy', session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= user.uri %></td>
+        <td><%= user.username %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,14 @@
 
 <br>
 
-<%= link_to 'New Session', new_session_path %>
+<%= link_to 'New User', new_user_path %>
+
+<hr />
+
+<%= @user.inspect%>
+
+
+
+
+
+

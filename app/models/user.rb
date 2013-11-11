@@ -1,9 +1,13 @@
 require 'active_resource'
 
 class User < Api::Base
-  self.prefix = '/CyberCoachServer/resources/'
 
   self.primary_key = 'username'
+  #self.user = "abcd"
+  #self.password = "abcd"
+  
+  
+  
 
   class << self
     def instantiate_collection(collection, prefix_options = {}, b = nil)

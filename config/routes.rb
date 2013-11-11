@@ -1,7 +1,7 @@
 Cybercoach::Application.routes.draw do
   get "welcome/index"
   
-  resources :sessions, :only => [:new, :create, :destroy]
+  resources :sessions, :only => [:new, :create, :destroy, :index] #FIXME
   resources :sports
   
   resources :users do
@@ -11,6 +11,7 @@ Cybercoach::Application.routes.draw do
   
   get '/signup',  :to => 'users#new'
   get '/signin',  :to => 'sessions#new'
+  #get '/signin', :to => 'sessions#index'
   get '/signout', :to => 'sessions#destroy'  
   
 
