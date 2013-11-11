@@ -1,7 +1,7 @@
 Cybercoach::Application.routes.draw do
   get "welcome/index"
   
-  resources :sessions, :only => [:new, :create, :destroy, :index] #FIXME
+  resources :sessions, :only => [:new, :create, :destroy]
   resources :sports
   
   resources :users do

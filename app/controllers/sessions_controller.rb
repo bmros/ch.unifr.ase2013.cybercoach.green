@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+  include SessionsHelper 
 
   def index
     @users = User.all
@@ -15,13 +15,14 @@ class SessionsController < ApplicationController
   # POST /sessions
   # POST /sessions.json
   def create
+
+	begin
+  	 @user = User.find(params[:session][:username])
+
     respond_to do |format|
 
-	#@user = User.find(params[:session][:username])
-	@user = User.find("abcd")
-	#@user.username = params[:session][:username]
-	@user.username = "roman"
-
+	#try to modify something...
+	  @user.username = params[:session][:username]
 
       begin
         status = @user.save
@@ -30,15 +31,23 @@ class SessionsController < ApplicationController
       end
 
       if status
+	  
+	    session[:current_user_id] = @user.id
+	  
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { redirect_to @user, alert: "Could not update" }
-		#format.html { redirect_to root_path, alert: "Could not update" }
+        #format.html { redirect_to @user, alert: "Could not update" }
+		format.html { redirect_to signin_path, alert: "Could not update" }
 
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
-    end
+	 end 
+    rescue
+	 redirect_to signin_path
+	end	  
+
+
   end
   
 
@@ -46,7 +55,10 @@ class SessionsController < ApplicationController
   # DELETE /sessions/1
   # DELETE /sessions/1.json
   def destroy
-  end
+  	session[:current_user_id] = nil
+    sign_out
+    redirect_to root_path
+  end 
 
 
     def session_params
