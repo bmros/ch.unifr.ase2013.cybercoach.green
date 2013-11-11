@@ -1,4 +1,11 @@
 Cybercoach::Application.routes.draw do
+  post "/fatsecret", to: "apis#fatsecret"
+
+  get "apis/fatsecret"
+  get '/users/:user_id/api_tokens/new' => redirect('/auth/fatsecret?user_id=%{user_id}')
+  get '/auth/fatsecret/callback', to: 'api_tokens#create'
+
+  get "api_tokens/create"
   get "welcome/index"
   
   resources :sessions, :only => [:new, :create, :destroy, :index] #FIXME

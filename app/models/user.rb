@@ -1,6 +1,7 @@
 require 'active_resource'
 
 class User < Api::Base
+  has_many :api_tokens
 
   self.primary_key = 'username'
   #self.user = "abcd"
