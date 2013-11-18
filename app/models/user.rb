@@ -1,7 +1,7 @@
 require 'active_resource'
 
 class User < Api::Base
-
+  has_many :user_links
   self.primary_key = 'username'
   self.user = "abcd"
   self.password = "abcd"

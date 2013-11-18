@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131101120236) do
+ActiveRecord::Schema.define(version: 20131118164021) do
+
+  create_table "api_tokens", force: true do |t|
+    t.string   "provider"
+    t.string   "auth_token"
+    t.string   "auth_secret"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_link_id"
+  end
 
   create_table "sessions", force: true do |t|
     t.string   "password"
@@ -30,5 +39,11 @@ ActiveRecord::Schema.define(version: 20131101120236) do
 
   add_index "trainings", ["sport_id"], name: "index_trainings_on_sport_id"
   add_index "trainings", ["user_id"], name: "index_trainings_on_user_id"
+
+  create_table "user_links", force: true do |t|
+    t.string   "username"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

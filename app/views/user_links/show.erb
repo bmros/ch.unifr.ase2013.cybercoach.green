@@ -1,0 +1,44 @@
+
+
+<p>
+  <strong>Username:</strong>
+  <%= @userlink.username  %>
+</p>
+
+<p>
+  <strong>ID:</strong>
+  <%= @userlink.id %>
+</p>
+
+<h4>Your APIs</h4>
+<ul>
+  <% user_link_apis = [] %>
+  <% @userlink.api_tokens.each do |api| %>
+      <li><b><%= api.provider.camelize %></b>( token: <%= api.auth_token %>, secret: <%= api.auth_secret %>  </li>
+      <% user_link_apis << api.provider %>
+  <% end %>
+
+
+
+  <% if user_link_apis.include?('fatsecret') %>
+      <%= link_to "Get FatSecret Profile", fatsecret_auth_path(@userlink, :method => 'profile.get'), :method => 'post' %>
+  <% else %>
+      <%= link_to 'Add FatSecret', new_user_link_api_token_path(@userlink) %>
+  <% end %>
+</ul>
+
+
+<p>
+<h3>Update your weight on FatSecret:</h3>
+<%= form_tag fatsecret_auth_path(@userlink) do %>
+    <%= label_tag(:goal_weight_kg, "Enter your goal weight in kg:") %>
+    <%= text_field_tag(:goal_weight_kg) %><br />
+    <%= label_tag(:current_height_cm, "Enter your current height in cm:") %>
+    <%= text_field_tag(:current_height_cm) %><br />
+    <%= label_tag(:current_weight_kg, "Enter your current weight in kg:") %>
+    <%= text_field_tag(:current_weight_kg) %><br />
+    <%= hidden_field_tag 'method', 'weight.update' %>
+    <%= submit_tag("Update Weight") %>
+<% end %>
+</p>
+

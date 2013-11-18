@@ -1,5 +1,22 @@
 Cybercoach::Application.routes.draw do
+  post "/fatsecret", to: "apis#fatsecret"
+
+  post "/user_links/:user_link_id/fatsecret", to: "apis#fatsecret", as: "fatsecret_auth"
+
+
+  get "apis/fatsecret"
+  get "user_links/create"
+  # match '/users/:user_id/api_tokens/new' => redirect('/auth/fatsecret?user_id=%{user_id}')
+
+  get '/user_links/:user_link_id/api_tokens/new' => redirect('/auth/fatsecret?user_id=%{user_link_id}')
+  get '/auth/fatsecret/callback', to: 'api_tokens#create'
+
+
+
+  get "api_tokens/create"
   get "welcome/index"
+
+ # userlink GET    /userlinks/:id(.:format)      userlinks#show
   
   resources :sessions, :only => [:new, :create, :destroy]
   resources :sports
@@ -7,6 +24,13 @@ Cybercoach::Application.routes.draw do
   resources :users do
    resources :trainings
   end
+
+
+  resources :user_links do
+    resources :api_tokens
+  end
+
+  # resources :user_links
   
   
   get '/signup',  :to => 'users#new'

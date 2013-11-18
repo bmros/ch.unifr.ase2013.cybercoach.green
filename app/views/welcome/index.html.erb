@@ -7,4 +7,16 @@ possible routes:
  /users/u_id/trainings
 </pre>
 
+
+<h3>Try FatSecret Food Search</h3>
+<h4>
+<%= form_tag fatsecret_path %>
+<%= label_tag(:search_expression, "Search for food:") %>
+<%= text_field_tag(:search_expression) %>
+<%= hidden_field_tag 'method', 'foods.search' %>
+<%= submit_tag("Search") %>
+  </h4>
+
+
+
 <img src="sport.png" alt="sport">
