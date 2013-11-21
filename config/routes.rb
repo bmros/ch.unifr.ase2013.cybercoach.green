@@ -1,20 +1,29 @@
 Cybercoach::Application.routes.draw do
+  resources :sessions
+
+  resources :sport_links
+
+  resources :user_links
+
   get "welcome/index"
+  
   
   resources :sessions, :only => [:new, :create, :destroy]
   resources :sports
   
-  resources :users do
-   resources :trainings
-  end
+  resources :users
   
   
   get '/signup',  :to => 'users#new'
   get '/signin',  :to => 'sessions#new'
   #get '/signin', :to => 'sessions#index'
-  get '/signout', :to => 'sessions#destroy'  
+  get '/signout', :to => 'sessions#destroy' 
   
-
+  
+  
+  
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

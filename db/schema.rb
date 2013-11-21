@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131101120236) do
+ActiveRecord::Schema.define(version: 20131119094149) do
 
   create_table "sessions", force: true do |t|
     t.string   "password"
@@ -20,15 +20,21 @@ ActiveRecord::Schema.define(version: 20131101120236) do
     t.datetime "updated_at"
   end
 
-  create_table "trainings", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "sport_id"
-    t.date     "date"
+  create_table "sport_links", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "trainings", ["sport_id"], name: "index_trainings_on_sport_id"
-  add_index "trainings", ["user_id"], name: "index_trainings_on_user_id"
+  create_table "user_links", force: true do |t|
+    t.string   "username"
+    t.string   "encrypted_password"
+    t.string   "salt"
+    t.string   "realname"
+    t.string   "email"
+    t.integer  "publicvisible"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

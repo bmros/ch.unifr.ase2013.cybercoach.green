@@ -3,8 +3,8 @@ require 'active_resource'
 class User < Api::Base
 
   self.primary_key = 'username'
-  self.user = "abcd"
-  self.password = "abcd"
+  self.user = "aaa"
+  self.password = "aaa"
   
   
   

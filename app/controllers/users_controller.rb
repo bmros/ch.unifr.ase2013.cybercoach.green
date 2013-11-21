@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   
+  
+  
+  
+  
   # GET /users
   # GET /users.json
   def index
@@ -15,6 +19,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+	@user_link = UserLink.new
   end
 
   # GET /users/1/edit
@@ -24,10 +29,13 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+  
+    @user_link = UserLink.new(user_params)
     @user = User.new(user_params, true)
+	
 
     respond_to do |format|
-      if @user.save
+      if @user.save && @user_link.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else
@@ -108,4 +116,23 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:uri, :username, :password, :realname, :email, :publicvisible)
     end
+	
+	
+	
+=begin	
+    # Use callbacks to share common setup or constraints between actions.
+    def set_user_link
+      @user_link = UserLink.find(params[:id])
+    end
+=end
+
+=begin
+	def user_link_params
+      params.require(:user).permit(:username, :password, :realname, :email, :publicvisible)
+    end
+=end
+
+
+	
+	
 end
