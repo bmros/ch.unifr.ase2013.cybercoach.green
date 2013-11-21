@@ -20,8 +20,8 @@
 */
  
 body {
- background-color: #123456;
- color: #fff;
+ background-color: #eee;
+ color: #444;
  width: 1200px;
  margin: 0 auto;
 }
@@ -55,7 +55,7 @@ a {
  padding : 10px;
 }
 #menu ul li a:hover, #menu ul li a.current {
- background-color : #123456;
+ background-color : #eee;
  color : #fff;
 }
 
