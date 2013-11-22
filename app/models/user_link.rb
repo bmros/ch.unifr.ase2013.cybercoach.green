@@ -17,15 +17,16 @@ validates :password, :presence     => true,
     encrypted_password == encrypt(password_soumis)
   end
 
-  def self.authenticate(email, submitted_password)
-    user = find_by_email(email)
-    return nil  if user.nil?
-    return user if user.has_password?(submitted_password)
+  def self.authenticate(username, submitted_password)
+    #user = find_by_email(email)
+	userlink = find_by_username(username)
+    return nil  if userlink.nil?
+    return userlink if userlink.has_password?(submitted_password)
   end
 
   def self.authenticate_with_salt(id, cookie_salt)
-    user = find_by_id(id)
-    (user && user.salt == cookie_salt) ? user : nil
+    userlink = find_by_id(id)
+    (userlink && userlink.salt == cookie_salt) ? userlink : nil
   end
 
 

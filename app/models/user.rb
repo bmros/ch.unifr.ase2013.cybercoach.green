@@ -3,8 +3,8 @@ require 'active_resource'
 class User < Api::Base
 
   self.primary_key = 'username'
-  self.user = "aaa"
-  self.password = "aaa"
+  #self.user = session[:current_userlink_id]
+  #self.password = session[:current_userlink_password]
   
   
   

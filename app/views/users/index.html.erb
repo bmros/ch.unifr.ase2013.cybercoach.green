@@ -27,3 +27,11 @@
 <br>
 
 <%= link_to 'New User', new_user_path %>
+
+
+<h1>
+	  <%= session[:current_userlink_username].inspect %>
+	  <br />
+	  <%= session[:current_userlink_password].inspect %>
+</h1>
+

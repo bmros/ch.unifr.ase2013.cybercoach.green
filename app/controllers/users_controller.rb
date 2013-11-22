@@ -2,9 +2,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   
   
-  
-  
-  
   # GET /users
   # GET /users.json
   def index
@@ -105,8 +102,8 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      #Api::Base.user = "abcd"
-      #Api::Base.password = "abcd"	
+      Api::Base.user = 	session[:current_userlink_username]
+      Api::Base.password = session[:current_userlink_password]
 	
 	#@user = User.find("a")
       @user = User.find(params[:id])
@@ -114,7 +111,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:uri, :username, :password, :realname, :email, :publicvisible)
+      params.require(:user).permit(:username, :password, :realname, :email, :publicvisible)
     end
 	
 	
