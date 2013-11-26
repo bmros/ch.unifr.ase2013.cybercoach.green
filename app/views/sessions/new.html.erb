@@ -1,19 +1,16 @@
-<h1>New session</h1>
-
-<%= form_for(:session, :url => sessions_path) do |f| %>
+<%= form_for :session, :url => sessions_path,:html => {:name => 'form1'} do |f| %>
   <div class="field">
-    <%= f.label :username %><br>
+    <%= f.label :username, "Username" %>
     <%= f.text_field :username %>
   </div>
   <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Go" %>
+    <%= f.label :password, "Password" %>
+    <%= f.password_field :password %>
   </div>
 <% end %>
 
+
+<input type="button" value="Enter" onclick="document.forms['form1'].submit();" />
 
 
 

@@ -1,0 +1,56 @@
+                  Prefix Verb   URI Pattern                                             Controller#Action
+               fatsecret POST   /fatsecret(.:format)                                    apis#fatsecret
+          fatsecret_auth POST   /user_links/:user_link_id/fatsecret(.:format)           apis#fatsecret
+          apis_fatsecret GET    /apis/fatsecret(.:format)                               apis#fatsecret
+       user_links_create GET    /user_links/create(.:format)                            user_links#create
+                         GET    /user_links/:user_link_id/api_tokens/new(.:format)      redirect(301, /auth/fatsecret?user_id=%{user_link_id})
+ auth_fatsecret_callback GET    /auth/fatsecret/callback(.:format)                      api_tokens#create
+       api_tokens_create GET    /api_tokens/create(.:format)                            api_tokens#create
+           welcome_index GET    /welcome/index(.:format)                                welcome#index
+                sessions POST   /sessions(.:format)                                     sessions#create
+             new_session GET    /sessions/new(.:format)                                 sessions#new
+                 session DELETE /sessions/:id(.:format)                                 sessions#destroy
+                  sports GET    /sports(.:format)                                       sports#index
+                         POST   /sports(.:format)                                       sports#create
+               new_sport GET    /sports/new(.:format)                                   sports#new
+              edit_sport GET    /sports/:id/edit(.:format)                              sports#edit
+                   sport GET    /sports/:id(.:format)                                   sports#show
+                         PATCH  /sports/:id(.:format)                                   sports#update
+                         PUT    /sports/:id(.:format)                                   sports#update
+                         DELETE /sports/:id(.:format)                                   sports#destroy
+          user_trainings GET    /users/:user_id/trainings(.:format)                     trainings#index
+                         POST   /users/:user_id/trainings(.:format)                     trainings#create
+       new_user_training GET    /users/:user_id/trainings/new(.:format)                 trainings#new
+      edit_user_training GET    /users/:user_id/trainings/:id/edit(.:format)            trainings#edit
+           user_training GET    /users/:user_id/trainings/:id(.:format)                 trainings#show
+                         PATCH  /users/:user_id/trainings/:id(.:format)                 trainings#update
+                         PUT    /users/:user_id/trainings/:id(.:format)                 trainings#update
+                         DELETE /users/:user_id/trainings/:id(.:format)                 trainings#destroy
+                   users GET    /users(.:format)                                        users#index
+                         POST   /users(.:format)                                        users#create
+                new_user GET    /users/new(.:format)                                    users#new
+               edit_user GET    /users/:id/edit(.:format)                               users#edit
+                    user GET    /users/:id(.:format)                                    users#show
+                         PATCH  /users/:id(.:format)                                    users#update
+                         PUT    /users/:id(.:format)                                    users#update
+                         DELETE /users/:id(.:format)                                    users#destroy
+    user_link_api_tokens GET    /user_links/:user_link_id/api_tokens(.:format)          api_tokens#index
+                         POST   /user_links/:user_link_id/api_tokens(.:format)          api_tokens#create
+ new_user_link_api_token GET    /user_links/:user_link_id/api_tokens/new(.:format)      api_tokens#new
+edit_user_link_api_token GET    /user_links/:user_link_id/api_tokens/:id/edit(.:format) api_tokens#edit
+     user_link_api_token GET    /user_links/:user_link_id/api_tokens/:id(.:format)      api_tokens#show
+                         PATCH  /user_links/:user_link_id/api_tokens/:id(.:format)      api_tokens#update
+                         PUT    /user_links/:user_link_id/api_tokens/:id(.:format)      api_tokens#update
+                         DELETE /user_links/:user_link_id/api_tokens/:id(.:format)      api_tokens#destroy
+              user_links GET    /user_links(.:format)                                   user_links#index
+                         POST   /user_links(.:format)                                   user_links#create
+           new_user_link GET    /user_links/new(.:format)                               user_links#new
+          edit_user_link GET    /user_links/:id/edit(.:format)                          user_links#edit
+               user_link GET    /user_links/:id(.:format)                               user_links#show
+                         PATCH  /user_links/:id(.:format)                               user_links#update
+                         PUT    /user_links/:id(.:format)                               user_links#update
+                         DELETE /user_links/:id(.:format)                               user_links#destroy
+                  signup GET    /signup(.:format)                                       users#new
+                  signin GET    /signin(.:format)                                       sessions#new
+                 signout GET    /signout(.:format)                                      sessions#destroy
+                    root GET    /                                                       welcome#index

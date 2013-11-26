@@ -5,9 +5,9 @@ class ApiTokensController < ApplicationController
     user_id = request.env['omniauth.params']['user_id']
     origin = request.env['omniauth.origin']
 
-    @userlink = UserLink.find(user_id)
+    @user_link = UserLink.find(user_id)
 
-    @new_api = @userlink.api_tokens.build(auth)
+    @new_api = @user_link.api_tokens.build(auth)
 
     if @new_api.save
       redirect_to origin

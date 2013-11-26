@@ -1,69 +1,43 @@
 class SessionsController < ApplicationController
-  include SessionsHelper 
+  include SessionsHelper
 
-  def index
-    @users = User.all
-  end
-
-
-  # GET /sessions/new
+=begin
   def new
-   #redirect_to root_path
+    @titre = "Login"
   end
+=end
 
 
-  # POST /sessions
-  # POST /sessions.json
   def create
+    userlink = UserLink.authenticate(params[:session][:username], params[:session][:password])
 
-	begin
-  	 @user = User.find(params[:session][:username])
-
-    respond_to do |format|
-
-	#try to modify something...
-	  @user.username = params[:session][:username]
-
-      begin
-        status = @user.save
-      rescue ActiveResource::UnauthorizedAccess
-        status = false
-      end
-
-      if status
-	  
-	    session[:current_user_id] = @user.id
-	  
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { head :no_content }
-      else
-        #format.html { redirect_to @user, alert: "Could not update" }
-		format.html { redirect_to signin_path, alert: "Could not update" }
-
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-	 end 
-    rescue
-	 redirect_to signin_path
-	end	  
+   # redirect_to fatsecret_auth_path(userlink.id,true) and return
 
 
+   # session_key =
+
+
+
+      if userlink.nil?
+      flash.now[:error] = "Combinaison Email/Mot de passe invalide."
+      @titre = "S'identifier"
+      render 'new'
+    else
+      sign_in userlink
+      redirect_to userlink
+      session[:current_userlink_id] = userlink.id
+      session[:current_userlink_username] = userlink.username
+      session[:current_userlink_password] = params[:session][:password] #not crypted!
+    end
   end
-  
 
-
-  # DELETE /sessions/1
-  # DELETE /sessions/1.json
   def destroy
-  	session[:current_user_id] = nil
+    session[:current_userlink_id] = nil
+    session[:current_userlink_password] = nil
+    session[:current_userlink_username] = nil
     sign_out
     redirect_to root_path
-  end 
-
-
-    def session_params
-      params.require(:session).permit(:password, :username)
-    end
+  end
 
 
 end

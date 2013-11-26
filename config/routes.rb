@@ -1,7 +1,9 @@
 Cybercoach::Application.routes.draw do
   post "/fatsecret", to: "apis#fatsecret"
 
+
   post "/user_links/:user_link_id/fatsecret", to: "apis#fatsecret", as: "fatsecret_auth"
+  #post "/user_links/:user_link_id/fatsecret", to: "/user_links/:user_link_id", as: "fatsecret_auth"
 
 
   get "apis/fatsecret"
@@ -9,6 +11,8 @@ Cybercoach::Application.routes.draw do
   # match '/users/:user_id/api_tokens/new' => redirect('/auth/fatsecret?user_id=%{user_id}')
 
   get '/user_links/:user_link_id/api_tokens/new' => redirect('/auth/fatsecret?user_id=%{user_link_id}')
+  #get '/user_links/:user_link_id/api_tokens/new' => redirect('/user_links/:user_link_id')
+
   get '/auth/fatsecret/callback', to: 'api_tokens#create'
 
 

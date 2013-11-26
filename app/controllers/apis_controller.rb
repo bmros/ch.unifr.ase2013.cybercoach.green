@@ -1,4 +1,12 @@
 class ApisController < ApplicationController
+  #include ActionController::Cookies
+  include SessionsHelper
+  require 'nokogiri'
+  require 'open-uri'
+  require 'active_support/core_ext/hash/conversions.rb'
+
+
+
   def fatsecret
     tokens = {}
     unless params[:user_link_id].nil?
@@ -15,5 +23,20 @@ class ApisController < ApplicationController
         tokens['auth_secret'] ||= ""
     )
     @response = request.body
+
+    doc = Nokogiri::XML(@response)
+    events = doc.search('session_key').text
+
+    @response = events
+    #sign_in_fatsecret(@response)
+
+    #TODO: create cookie only if events = session_key
+
+    #cookies.permanent.signed[:fatsecret_session_key] = [@response]
+    cookies[:fatsecret_session_key] = { :value => @response, :expires => Time.now + 3600}
+    self.current_fatsecret_session_key = @response
+    #redirect_to root_path
+    #redirect_to /user_links/
+
   end
 end

@@ -1,13 +1,13 @@
 require 'active_resource'
 
 class User < Api::Base
-  has_many :user_links
+
   self.primary_key = 'username'
-  self.user = "abcd"
-  self.password = "abcd"
-  
-  
-  
+  #self.user = session[:current_userlink_id]
+  #self.password = session[:current_userlink_password]
+
+
+
 
   class << self
     def instantiate_collection(collection, prefix_options = {}, b = nil)
