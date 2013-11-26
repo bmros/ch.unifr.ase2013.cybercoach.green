@@ -25,7 +25,9 @@ Cybercoach::Application.routes.draw do
   resources :sessions, :only => [:new, :create, :destroy]
   resources :sports
   
-  resources :users
+  resources :users do
+   resources :trainings
+  end
 
 
   resources :user_links do
