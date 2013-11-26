@@ -12,7 +12,7 @@ class UserLinksController < ApplicationController
   # GET /user_links/1.json
   def show
   end
-
+  
   # GET /user_links/new
   def new
     @user_link = UserLink.new

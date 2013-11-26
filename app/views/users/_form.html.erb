@@ -1,37 +1,31 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="wrapper">
+ <%= form_for @user,:html => {:class => 'form'}  do |f| %>
+  <div class="header">
+   <h1>Register Form</h1>
+   <span>Fill out the form below to register</span>
+  </div>  
+  <div class="content">
+   <div class="field">
+    <%= f.text_field :username, :class => 'input', :placeholder => "Username" %>
+   </div>
+   <div class="field">
+    <%= f.text_field :password, :class => 'input', :placeholder => "Password" %>
+   </div>
+   <div class="field">
+    <%= f.text_field :realname, :class => 'input', :placeholder => "Realname" %>
+   </div>   
+   <div class="field">
+    <%= f.text_field :email, :class => 'input', :placeholder => "Email" %>
+   </div>      
+   <div class="field">
+    <%= f.text_field :publicvisible, :class => 'input', :placeholder => "Visibility" %>
+   </div>
+  </div>
+  <div class="footer">
+   <input type="submit" name="submit" value="Register" class="register" />
+   </div>
+ <% end %>
+</div>
+<div class="gradient"></div>
 
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :realname %><br>
-    <%= f.text_field :realname %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :publicvisible %><br>
-    <%= f.number_field :publicvisible %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<input type="button" value="Login" class="button" onclick="document.forms['form1'].submit();" />

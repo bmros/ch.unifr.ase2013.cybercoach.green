@@ -15,19 +15,19 @@ Cybercoach::Application.routes.draw do
 
   get '/auth/fatsecret/callback', to: 'api_tokens#create'
 
-
-
+  #get "/user_links/:user_link_id/myexercise"
   get "api_tokens/create"
   get "welcome/index"
 
  # userlink GET    /userlinks/:id(.:format)      userlinks#show
+   
+  #get '/user_links/:user_link_id/myexercise',  :to => 'user_links#myexercise', :as => 'myexercise'
+  
   
   resources :sessions, :only => [:new, :create, :destroy]
   resources :sports
   
-  resources :users do
-   resources :trainings
-  end
+  resources :users
 
 
   resources :user_links do

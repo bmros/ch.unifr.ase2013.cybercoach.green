@@ -102,8 +102,8 @@ class UsersController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    Api::Base.user = 	session[:current_userlink_username]
-    Api::Base.password = session[:current_userlink_password]
+    Api::Base.user = 	session[:current_user_link_username]
+    Api::Base.password = session[:current_user_link_password]
 
     #@user = User.find("a")
     @user = User.find(params[:id])
