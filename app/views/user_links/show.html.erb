@@ -1,18 +1,18 @@
-<ul>
+<div class="wrapper">
+
+
+
   <% user_link_apis = [] %>
   <% if user_link_apis.include?('fatsecret') %>
       <%= link_to "Get FatSecret Profile", fatsecret_auth_path(@user_link, :method => 'profile.get'), :method => 'post' %>
-  <% else %>
-      <%= link_to 'Add FatSecret', new_user_link_api_token_path(@user_link) %>
-      <% @user_link.api_tokens.each do |api| %>
-          <li><b><%= api.provider.camelize %></b>( token: <%= api.auth_token %>, secret: <%= api.auth_secret %>  </li>
-          <% user_link_apis << api.provider %>
-      <% end %>
 
-<% end %>
-</ul>
 
-<div class="wrapper">
+
+
+
+
+
+
 
 <%= form_tag fatsecret_auth_path(@user_link), :class => 'form' do %>
   <div class="header">
@@ -43,6 +43,17 @@
 </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
 <h3>Request Script Session Key:</h3>
 <%= form_tag fatsecret_auth_path(@user_link) ,:id => 'form1' do %>
     <%= hidden_field_tag 'method', 'profile.request_script_session_key' %>
@@ -51,8 +62,24 @@
 <% end %>
 
 
+
+
+
+
+
+
 <div id="my_container" class="fatsecret_container" ></div>
 
+
+<% else %>
+      <%= link_to 'Please register on FatSecret now', new_user_link_api_token_path(@user_link) %>
+      <% @user_link.api_tokens.each do |api| %>
+          <li><b><%= api.provider.camelize %></b>( token: <%= api.auth_token %>, secret: <%= api.auth_secret %>  </li>
+          <% user_link_apis << api.provider %>
+      <% end %>
+<% end %>
+
+<hr />
 
 
 <%= link_to 'Edit', edit_user_link_path(@user_link) %> |

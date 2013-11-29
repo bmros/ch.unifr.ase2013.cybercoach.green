@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+include SessionsHelper
 
   # GET /users
   # GET /users.json
@@ -33,7 +34,14 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save && @user_link.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+	    #if ok -> login
+        user_link = UserLink.authenticate(params[:user][:username], params[:user][:password])
+	    sign_in user_link
+        session[:current_user_link_id] = user_link.id
+        session[:current_user_link_username] = user_link.username
+        session[:current_user_link_password] = params[:user][:password] #not crypted!
+		
+        format.html { redirect_to @user_link, notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else
         format.html { render action: 'new' }
@@ -56,9 +64,10 @@ class UsersController < ApplicationController
         @user.password = nil
       end
 
-
+     @user_link = UserLink.find(session[:current_user_link_id])
+	  
       begin
-        status = @user.save
+        status = @user.save && @user_link.save
       rescue ActiveResource::UnauthorizedAccess
         status = false
       end
@@ -93,6 +102,9 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user.destroy
+    @user_link = UserLink.find(session[:current_user_link_id])
+	@user_link.destroy
+	
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }
