@@ -22,11 +22,22 @@ class SessionsController < ApplicationController
       render 'new'
     else
       sign_in user_link
-      redirect_to user_link
+
 	  #redirect_to myexercise_path(user_link.id)
       session[:current_user_link_id] = user_link.id
       session[:current_user_link_username] = user_link.username
       session[:current_user_link_password] = params[:session][:password] #not crypted!
+
+	    if ApiToken.find_by_user_link_id(user_link.id) == nil
+        # no fatsecret profile yet, dont request a session key
+      else
+        sign_in_fatsecret(params)
+      end
+
+
+
+      redirect_to user_link
+
     end
   end
 
@@ -34,7 +45,9 @@ class SessionsController < ApplicationController
     session[:current_user_link_id] = nil
     session[:current_user_link_password] = nil
     session[:current_user_link_username] = nil
+    session[:current_fatsecret_session_key] = nil
     sign_out
+    sign_out_fatsecret
     redirect_to root_path
   end
 

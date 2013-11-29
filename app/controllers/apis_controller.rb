@@ -35,7 +35,7 @@ class ApisController < ApplicationController
     #cookies.permanent.signed[:fatsecret_session_key] = [@response]
     cookies[:fatsecret_session_key] = { :value => @response, :expires => Time.now + 3600}
     self.current_fatsecret_session_key = @response
-    #redirect_to root_path
+    redirect_to :back
     #redirect_to /user_links/
 
   end

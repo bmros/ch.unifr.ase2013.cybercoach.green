@@ -1,4 +1,5 @@
 class ApiTokensController < ApplicationController
+  include SessionsHelper
   #before_filter :authenticate_user!
   def create
     auth = omniauth(request.env['omniauth.auth'])
@@ -10,6 +11,7 @@ class ApiTokensController < ApplicationController
     @new_api = @user_link.api_tokens.build(auth)
 
     if @new_api.save
+      sessionkeygetparams
       redirect_to origin
     end
   end

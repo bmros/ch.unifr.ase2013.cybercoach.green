@@ -1,27 +1,30 @@
 <%= flash[:error]%>
 <div class="wrapper">
- <%= form_for :session, :url => sessions_path,:html => {:name => 'form1', :class => 'form'}  do |f| %>
-  <div class="header">
-   <h1>Login Form</h1>
-   <span>Fill out the form below to login</span>
-  </div>  
-  <div class="content">
-   <div class="field">
-    <%= f.text_field :username, :class => 'input username', :placeholder => "Username" %>
-   </div>
-   <div class="field">
-    <%= f.password_field :password, :class => 'input password', :placeholder => "Password" %>
-   </div>
-  </div>
-  <div class="footer">
-   <input type="submit" name="submit" value="Login" class="button" />
-   </div>
- <% end %>
+  <%= form_for :session, :url => sessions_path,:html => {:name => 'form1', :class => 'form'}  do |f| %>
+      <div class="header">
+        <h1>Login Form</h1>
+        <span>Fill out the form below to login</span>
+      </div>
+      <div class="content">
+        <div class="field">
+          <%= f.text_field :username, :class => 'input username', :placeholder => "Username" %>
+        </div>
+        <div class="field">
+          <%= f.password_field :password, :class => 'input password', :placeholder => "Password" %>
+        </div>
+        <%= hidden_field_tag 'method', 'profile.request_script_session_key' %>
+        <%= hidden_field_tag 'cookie', 'true' %>
+      </div>
+
+
+      <div class="footer">
+        <input type="submit" name="submit" value="Login" class="button" />
+      </div>
+  <% end %>
 </div>
 <div class="gradient"></div>
 
 <input type="button" value="Login" class="button" onclick="document.forms['form1'].submit();" />
-
 
 
 
