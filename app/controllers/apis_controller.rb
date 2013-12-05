@@ -41,23 +41,49 @@ class ApisController < ApplicationController
     end
     #@test = @test.search('exercise_name')
 
-
+    newentry = 1
     # Check if the sport is allready listed, if not, save
-    t=0
     @exercises.each do |e|
-      if (SportLink.find_by_user_link_id(session[:current_user_link_id]) != nil)
-        t = 0
-        SportLink.find_all_by_user_link_id(session[:current_user_link_id]).each do  |i|
-          if(i.name == e)
-            t = 1
+      newentry = 1
+      if (SportLink.find_by_name(e) != nil) #this sport exists on cybercoach (or at least local)
+        sport =  SportLink.find_by_name(e)
+        if (Subscription.find_by_sport_link_id(sport.id) != nil) # there is at least one subscription for this sport
+          Subscription.find_all_by_sport_link_id(sport.id).each do |sub| #look at every subscription that matches the sport
+            if(sub.user_link_id == session[:current_user_link_id])    #check if it is for the current user
+              newentry = 0       # entry already exists, dont create a new one later
+            end
+
+          end
+        end
+          if (newentry == 1)
+             Subscription.create(:user_link_id => session[:current_user_link_id], :sport_link_id => sport.id)
           end
 
-        end
-        if(t==0)
-          SportLink.create(:name => e, :user_link_id => session[:current_user_link_id])
-        end
       end
+
+
     end
+
+
+
+
+
+
+    #t=0
+    #@exercises.each do |e|
+     # if (SportLink.find_by_user_link_id(session[:current_user_link_id]) != nil)
+      #  t = 0
+       # SportLink.find_all_by_user_link_id(session[:current_user_link_id]).each do  |i|
+        #  if(i.name == e)
+         #   t = 1
+         # end
+
+       # end
+       # if(t==0)
+       #   SportLink.create(:name => e, :user_link_id => session[:current_user_link_id])
+       # end
+      #end
+    #end
 
 
 

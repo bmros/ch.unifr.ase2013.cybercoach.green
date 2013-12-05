@@ -1,6 +1,6 @@
 class UserLink < ActiveRecord::Base
   has_many :api_tokens
-  has_many :sport_links
+  has_many :subscriptions
   #self.primary_key = 'username'
 
 
