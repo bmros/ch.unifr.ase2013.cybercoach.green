@@ -53,6 +53,11 @@ module SessionsHelper
   end
 
 
+  def exercisesgetparams
+
+  end
+
+
 
 
   def sessionkey(params)
@@ -109,6 +114,75 @@ module SessionsHelper
     #redirect_to /user_links/
     # redirect_to :back
     #render :nothing => true
+
+  end
+
+
+  def getexercises(params)
+    tokens = {}
+    unless session[:current_user_link_id].nil?
+
+      user = UserLink.find(session[:current_user_link_id])
+      tokens = user.api_tokens.find_by_provider('fatsecret')
+    end
+
+    params.merge(:user_id => session[:current_user_link_id])
+
+    params2 = params.except(:authenticity_token, :session, :password, :submit)
+    params2 = params2.merge(:user_id => session[:current_user_link_id])
+
+
+    request = Fatsecret::Api.new({}).api_call(
+        #ENV['FATSECRET_KEY'],
+        #ENV['FATSECRET_SECRET'],
+        'cac271e1f5114c8298cd23ca772809fd',
+        'c6172e6faf1b49bb8d66b674e7a18846',
+        params2,
+        tokens['auth_token'] ||= "",
+        tokens['auth_secret'] ||= ""
+    )
+    @response = request.body
+
+    doc = Nokogiri::XML(@response)
+    #sessionkey_events = doc.search('session_key').text
+
+
+
+    #@test = doc.xpath('//xmlns:exercise_entries/xmlns:exercise_entry/xmlns:exercise_name').each do |i|
+    #       i.search('exercise_name').text
+    #end
+
+
+
+    @exercises = []
+    @test = doc.xpath('//xmlns:exercise_entries/xmlns:exercise_entry/xmlns:exercise_name').each do |i|
+      @exercises.append(i.text)
+    end
+    #@test = @test.search('exercise_name')
+
+
+    # Check if the sport is already listed, if not save it
+    t=0
+    @exercises.each do |e|
+      if (SportLink.find_by_user_link_id(session[:current_user_link_id]) != nil)
+        t = 0
+        SportLink.find_all_by_user_link_id(session[:current_user_link_id]).each do  |i|
+          if(i.name == e)
+            t = 1
+          end
+
+        end
+        if(t==0)
+          SportLink.create(:name => e, :user_link_id => session[:current_user_link_id])
+        end
+      end
+    end
+
+
+
+    #@test = doc.map do |i|
+    # i.search('exercise_name').text
+    #end
 
   end
 
