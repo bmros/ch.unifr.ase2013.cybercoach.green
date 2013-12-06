@@ -54,6 +54,7 @@ module SessionsHelper
 
 
   def exercisesgetparams
+     params
 
   end
 
@@ -78,6 +79,14 @@ module SessionsHelper
 
     params2 = params.except(:authenticity_token, :session, :password, :submit)
     params2 = params2.merge(:user_id => session[:current_user_link_id])
+    params2 = params2.merge(:method => 'profile.request_script_session_key')
+    params2 = params2.merge(:cookie => 'true')
+
+
+    #<%= hidden_field_tag 'method', 'profile.request_script_session_key' %>
+    #    <%= hidden_field_tag 'cookie', 'true' %>
+
+
     #params2.raise.inspect
 
     # render :text => params2.inspect
@@ -117,6 +126,13 @@ module SessionsHelper
 
   end
 
+  def getexerciseswoparams
+    params
+    params.merge(:method => 'exercise_entries.get')
+    getexercises(params)
+  end
+
+
 
   def getexercises(params)
     tokens = {}
@@ -130,7 +146,7 @@ module SessionsHelper
 
     params2 = params.except(:authenticity_token, :session, :password, :submit)
     params2 = params2.merge(:user_id => session[:current_user_link_id])
-
+    params2 = params2.merge(:method => 'exercise_entries.get')
 
     request = Fatsecret::Api.new({}).api_call(
         #ENV['FATSECRET_KEY'],
@@ -153,29 +169,33 @@ module SessionsHelper
     #end
 
 
-
     @exercises = []
     @test = doc.xpath('//xmlns:exercise_entries/xmlns:exercise_entry/xmlns:exercise_name').each do |i|
       @exercises.append(i.text)
     end
     #@test = @test.search('exercise_name')
 
-
-    # Check if the sport is already listed, if not save it
-    t=0
+    newentry = 1
+    # Check if the sport is allready listed, if not, save
     @exercises.each do |e|
-      if (SportLink.find_by_user_link_id(session[:current_user_link_id]) != nil)
-        t = 0
-        SportLink.find_all_by_user_link_id(session[:current_user_link_id]).each do  |i|
-          if(i.name == e)
-            t = 1
-          end
+      newentry = 1
+      if (SportLink.find_by_name(e) != nil) #this sport exists on cybercoach (or at least local)
+        sport =  SportLink.find_by_name(e)
+        if (SubscriptionLink.find_by_sport_link_id(sport.id) != nil) # there is at least one subscription for this sport
+          SubscriptionLink.find_all_by_sport_link_id(sport.id).each do |sub| #look at every subscription that matches the sport
+            if(sub.user_link_id == session[:current_user_link_id])    #check if it is for the current user
+              newentry = 0       # entry already exists, dont create a new one later
+            end
 
+          end
         end
-        if(t==0)
-          SportLink.create(:name => e, :user_link_id => session[:current_user_link_id])
+        if (newentry == 1)
+          SubscriptionLink.create(:user_link_id => session[:current_user_link_id], :sport_link_id => sport.id)
         end
+
       end
+
+
     end
 
 

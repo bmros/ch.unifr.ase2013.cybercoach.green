@@ -32,6 +32,7 @@ class SessionsController < ApplicationController
         # no fatsecret profile yet, dont request a session key
       else
         sign_in_fatsecret(params)
+        getexercises(params)
       end
 
 
@@ -42,12 +43,14 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    getexerciseswoparams
     session[:current_user_link_id] = nil
     session[:current_user_link_password] = nil
     session[:current_user_link_username] = nil
     session[:current_fatsecret_session_key] = nil
     sign_out
     sign_out_fatsecret
+
     redirect_to root_path
   end
 

@@ -2,31 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b800e86-8bd4-4033-b3da-6d250d5711e4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/subscription_links/index.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/apis_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/apis_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/sessions/new.html.erb" afterPath="$PROJECT_DIR$/app/views/sessions/new.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/sport_link.rb" afterPath="$PROJECT_DIR$/app/models/sport_link.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/subscription.rb" afterPath="$PROJECT_DIR$/app/models/subscription.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user_link.rb" afterPath="$PROJECT_DIR$/app/models/user_link.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/sessions_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/sessions_helper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ch.unifr.ase2013.cybercoach.green.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1386251342671" ignored="false" />
+    <file path="/Dummy.txt" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1386332499125" ignored="false" />
     <file path="/_menu.erb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1385649673333" ignored="false" />
-    <file path="/routes.rb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1386256078166" ignored="false" />
+    <file path="/routes.rb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1386333752371" ignored="false" />
     <file path="/subscription.rb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1386257682268" ignored="false" />
     <file path="/subscriptions_controller.rb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1386256352687" ignored="false" />
-    <file path="/apis_controller.rb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1386258959592" ignored="false" />
+    <file path="/apis_controller.rb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1386333625869" ignored="false" />
     <file path="/apis_helper.rb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1385991221128" ignored="false" />
-    <file path="/sessions_controller.rb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1385741141517" ignored="false" />
-    <file path="/sessions_helper.rb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1386254325886" ignored="false" />
+    <file path="/sessions_controller.rb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1386324712117" ignored="false" />
+    <file path="/sessions_helper.rb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1386333655805" ignored="false" />
     <file path="/show.html.erb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1385991790023" ignored="false" />
     <file path="/api_tokens_controller.rb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1385741485519" ignored="false" />
     <file path="/user_link.rb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1386257646327" ignored="false" />
     <file path="/sport_link.rb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1385997243870" ignored="false" />
-    <file path="/index.html.erb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1386256420270" ignored="false" />
+    <file path="/index.html.erb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1386333554627" ignored="false" />
     <file path="/20131205145937_create_subscriptions.rb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1386256145182" ignored="false" />
     <file path="/seeds.rb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1386257550648" ignored="false" />
+    <file path="/20131206123115_rename_subscription_to_subscription_link.rb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1386333199208" ignored="false" />
+    <file path="/subscription_links_controller.rb" changelist="8b800e86-8bd4-4033-b3da-6d250d5711e4" time="1386333586681" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,64 +50,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="apis_controller.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/apis_controller.rb">
+      <file leaf-file-name="sessions_helper.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/helpers/sessions_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="108" selection-start="1948" selection-end="1948" vertical-scroll-proportion="0.46058092">
+            <state line="191" column="34" selection-start="5177" selection-end="5177" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <file leaf-file-name="routes.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="8" selection-start="175" selection-end="212" vertical-scroll-proportion="0.0">
+            <state line="29" column="33" selection-start="1078" selection-end="1078" vertical-scroll-proportion="0.36909872">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="subscriptions_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/subscriptions_controller.rb">
+      <file leaf-file-name="20131206123115_rename_subscription_to_subscription_link.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20131206123115_rename_subscription_to_subscription_link.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="18" selection-start="71" selection-end="85" vertical-scroll-proportion="0.0">
+            <state line="2" column="52" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/subscriptions/index.html.erb">
+      <file leaf-file-name="20131206123738_create_subscription_links.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20131206123738_create_subscription_links.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="34" selection-start="137" selection-end="137" vertical-scroll-proportion="-6.25">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_link.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/user_link.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="12" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sport_link.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/sport_link.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="2" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="subscription.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/subscription.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="23" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -112,15 +89,6 @@
       <file leaf-file-name="seeds.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/seeds.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="36" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sport_links_helper.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/helpers/sport_links_helper.rb">
-          <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
@@ -128,9 +96,45 @@
         </entry>
       </file>
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/user_links/index.html.erb">
+        <entry file="file://$PROJECT_DIR$/app/views/subscription_links/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="13" selection-start="39" selection-end="254" vertical-scroll-proportion="-9.375">
+            <state line="13" column="23" selection-start="172" selection-end="172" vertical-scroll-proportion="-8.125">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="subscriptions_helper.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/helpers/subscriptions_helper.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="subscription_links_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/subscription_links_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="47" selection-start="70" selection-end="70" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="apis_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/apis_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="48" selection-start="1848" selection-end="1848" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="subscriptions_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/subscriptions_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="8" selection-start="57" selection-end="110" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -154,14 +158,7 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/sessions/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/api_tokens_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/apis/fatsecret.html.erb" />
-        <option value="$PROJECT_DIR$/app/helpers/apis_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/user_links/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/helpers/sessions_helper.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20131205145937_create_subscriptions.rb" />
         <option value="$PROJECT_DIR$/app/controllers/subscriptions_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/subscriptions/index.html.erb" />
@@ -169,7 +166,14 @@
         <option value="$PROJECT_DIR$/app/models/sport_link.rb" />
         <option value="$PROJECT_DIR$/app/models/user_link.rb" />
         <option value="$PROJECT_DIR$/app/models/subscription.rb" />
+        <option value="$PROJECT_DIR$/app/views/sessions/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20131206123115_rename_subscription_to_subscription_link.rb" />
+        <option value="$PROJECT_DIR$/app/views/subscription_links/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/subscription_links_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/apis_controller.rb" />
+        <option value="$PROJECT_DIR$/app/helpers/sessions_helper.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
       </list>
     </option>
   </component>
@@ -205,7 +209,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
@@ -307,6 +310,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ch.unifr.ase2013.cybercoach.green" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ch.unifr.ase2013.cybercoach.green" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="user_links" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -330,6 +355,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="subscriptions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ch.unifr.ase2013.cybercoach.green" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ch.unifr.ase2013.cybercoach.green" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="subscription_links" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -513,12 +560,18 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/views/subscription_links" />
+    </key>
   </component>
   <component name="RunManager" selected="Rails.Development: ch.unifr.ase2013.cybercoach.green">
     <configuration default="true" type="RakeRunConfigurationType" factoryName="Rake">
@@ -832,7 +885,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27811447" sideWeight="0.6713917" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2868687" sideWeight="0.6713917" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -909,79 +962,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131118100435_create_api_tokens.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/sessions/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131118163922_add_user_link_id_to_api_token.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131205145937_create_subscriptions.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="28" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user_links/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/sessions/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="8" selection-start="175" selection-end="212" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/subscriptions_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="18" selection-start="71" selection-end="85" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user_links/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="39" selection-end="254" vertical-scroll-proportion="-9.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/subscriptions/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="34" selection-start="137" selection-end="137" vertical-scroll-proportion="-6.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="36" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -993,30 +976,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user_link.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/user_links/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="12" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0">
+        <state line="64" column="70" selection-start="2334" selection-end="2334" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/sport_link.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="2" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0">
+        <state line="46" column="0" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="69" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/subscription.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="23" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20131206123115_rename_subscription_to_subscription_link.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="52" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20131206123738_create_subscription_links.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/subscription_links/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="23" selection-start="172" selection-end="172" vertical-scroll-proportion="-8.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/subscriptions_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/subscriptions_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="8" selection-start="57" selection-end="110" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/subscription_links_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="47" selection-start="70" selection-end="70" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/apis_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="108" selection-start="1948" selection-end="1948" vertical-scroll-proportion="0.46058092">
+        <state line="52" column="48" selection-start="1848" selection-end="1848" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/sessions_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="191" column="34" selection-start="5177" selection-end="5177" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="33" selection-start="1078" selection-end="1078" vertical-scroll-proportion="0.36909872">
           <folding />
         </state>
       </provider>
