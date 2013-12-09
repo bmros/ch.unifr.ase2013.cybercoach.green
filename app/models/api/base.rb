@@ -1,3 +1,4 @@
+require 'active_resource'
 class Api::Base < ActiveResource::Base
   self.site='http://diufvm31.unifr.ch:8090/CyberCoachServer/resources/'
   #self.site = 'http://diufpc46.unifr.ch:8080'
