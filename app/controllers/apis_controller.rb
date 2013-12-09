@@ -16,8 +16,11 @@ class ApisController < ApplicationController
     request = Fatsecret::Api.new({}).api_call(
         #ENV['FATSECRET_KEY'],
         #ENV['FATSECRET_SECRET'],
-        'cac271e1f5114c8298cd23ca772809fd',
-        'c6172e6faf1b49bb8d66b674e7a18846',
+        #'cac271e1f5114c8298cd23ca772809fd',   # localhost api key
+        #'c6172e6faf1b49bb8d66b674e7a18846',   # localhost secret
+        '2335333d72d249908b349d841c398027',    # herokuapp api key
+        'd9378f2bfe9e443485fdb422cc526c44',    # herokuapp secret
+
         params,
         tokens['auth_token'] ||= "",
         tokens['auth_secret'] ||= ""
