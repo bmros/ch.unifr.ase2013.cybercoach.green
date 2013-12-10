@@ -5,7 +5,7 @@ a {
 }
 
 
-#menu, #footer {
+#menu, #footer, #my_container {
  margin-bottom : 10px;
  font-size : 12px;
  text-align : center;
@@ -17,6 +17,12 @@ a {
  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
  color: #8ebdcb;
 }
+
+#my_container{
+ text-align: left;
+ background-image: url('b.png');
+}
+
  
 #menu ul {
  margin : 0;
@@ -41,4 +47,16 @@ a {
 
 hr  {
  border: solid 1px white;
+}
+
+
+#userForm{
+ float: left;
+}
+#weigthForm{
+ float: right;
+}
+
+.clear {
+ clear: both;
 }

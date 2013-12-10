@@ -35,15 +35,15 @@ class SessionsController < ApplicationController
         getexercises(params)
       end
 
-
-
-      redirect_to user_link
+      #redirect_to user_link
+	  @user = User.find(user_link.username) #user controller can manage user_link data
+	  redirect_to @user
 
     end
   end
 
   def destroy
-    getexerciseswoparams
+    #getexerciseswoparams FIXME ----------------------------------------------------------------
     session[:current_user_link_id] = nil
     session[:current_user_link_password] = nil
     session[:current_user_link_username] = nil

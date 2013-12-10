@@ -119,6 +119,8 @@ include SessionsHelper
 
     #@user = User.find("a")
     @user = User.find(params[:id])
+	@user_link = UserLink.find_by_username(params[:id])
+	
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

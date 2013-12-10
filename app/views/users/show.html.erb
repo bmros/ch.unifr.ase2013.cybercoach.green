@@ -1,34 +1,65 @@
-<p id="notice"><%= notice %></p>
+<div class="wrapper">
 
-<p>
-  <strong>Uri:</strong>
-  <%= @user.uri %>
-</p>
+<% if ApiToken.find_by_user_link_id(@user_link) == nil %>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+          <%= link_to 'Please register on FatSecret now', new_user_link_api_token_path(@user_link) %>
+          <% @user_link.api_tokens.each do |api| %>
+              <li><b><%= api.provider.camelize %></b>( token: <%= api.auth_token %>, secret: <%= api.auth_secret %>  </li>
+              <% user_link_apis << api.provider %>
+          <% end %>
 
-<p>
-  <strong>Realname:</strong>
-  <%= @user.realname %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
 
-<p>
-  <strong>Publicvisible:</strong>
-  <%= @user.publicvisible %>
-</p>
+<% else %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+
+        <div id="my_container" class="fatsecret_container" ></div>
+
+
+    
+
+
+
+          <h3>Request Script Session Key:</h3>
+          <%= form_tag fatsecret_auth_path(@user_link) ,:id => 'form1' do %>
+              <%= hidden_field_tag 'method', 'profile.request_script_session_key' %>
+              <%= hidden_field_tag 'cookie', 'true' %>
+              <%= submit_tag("Get Key") %>
+          <% end %>
+
+
+      <h3>Request Today's Exercises:</h3>
+      <%= form_tag fatsecret_auth_path(@user_link) ,:id => 'form1' do %>
+          <%= hidden_field_tag 'method', 'exercise_entries.get' %>
+          <%= submit_tag("Get Them") %>
+      <% end %>
+
+
+
+<% end %>
+
+
+
+<h2>Subscriptions</h2>
+<ul>
+  <% if not @user.subscriptions.nil? %>
+      <% @user.subscriptions.each do |sub| %>
+
+          <li><%= link_to sub.attributes["uri"].split('/').last, user_path+subscriptions_path+"/"+sub.attributes["uri"].split('/').last %></li>
+      <% end %>
+  <% end %>
+</ul>
+
+
+
+
+
+
+
+<hr />
+
+
+<%= link_to 'Edit', edit_user_link_path(@user_link) %> |
+<%= link_to 'Back', user_links_path %>
