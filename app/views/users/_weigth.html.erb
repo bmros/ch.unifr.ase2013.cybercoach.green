@@ -1,0 +1,26 @@
+<%= form_tag fatsecret_auth_path(@user_link), :class => 'form' do %>
+              <div class="header">
+                <h1>Update your weight on FatSecret:</h1>
+                <span>Fill out the form below</span>
+              </div>
+
+              <div class="content">
+                <div class="field">
+                  <%= text_field :username,nil, :class => 'input', :placeholder => "Username" %>
+                </div>
+                <div class="field">
+                  <%= text_field_tag :goal_weight_kg,nil, :class => 'input', :placeholder => "Your goal weight in kg" %>
+                </div>
+                <div class="field">
+                  <%= text_field_tag :current_height_cm,nil, :class => 'input', :placeholder => "Your current height in cm" %>
+                </div>
+                <div class="field">
+                  <%= text_field_tag :current_weight_kg,nil, :class => 'input', :placeholder => "Your current weight in kg" %>
+                </div>
+                <%= hidden_field_tag 'method', 'weight.update' %>
+              </div>
+
+              <div class="footer">
+                <%= submit_tag "Update Weight" , :class => "register"  %>
+              </div>
+          <% end %>
