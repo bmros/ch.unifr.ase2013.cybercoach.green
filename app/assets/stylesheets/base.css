@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-@import url(//fonts.googleapis.com/css?family=Faster+One);
-=======
 @import url(http://fonts.googleapis.com/css?family=Faster+One);
->>>>>>> 471d0fd83ac0d43fe7366ba626be9a5b61de00c2
 
 a {
  color: #444;
@@ -10,8 +6,7 @@ a {
 }
 
 #page{
- //background-color: #eee;
- //background-image: url('b.png');
+
  padding: 10px;
   border-radius: 5px;
  box-shadow: 0 1px 3px rgba(0,0,0,0.5);

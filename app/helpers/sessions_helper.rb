@@ -52,7 +52,7 @@ module SessionsHelper
     #p[:cookie] = 'true'
 
     params3 = params.except();
-    params3[:utf8] = "✓"
+    #params3[:utf8] = "✓"
     params3[:action] = "create"
     params3[:controller] = "sessions"
     params3[:user_id] = session[:current_user_link_id]
@@ -144,7 +144,7 @@ module SessionsHelper
 
   def getexerciseswoparams
     params3 = params.except();
-    params3[:utf8] = "✓"
+    #params3[:utf8] = "✓"
     params3[:action] = "create"
     params3[:controller] = "sessions"
     params3[:user_id] = session[:current_user_link_id]

@@ -41,7 +41,7 @@ include SessionsHelper
         session[:current_user_link_username] = user_link.username
         session[:current_user_link_password] = params[:user][:password] #not crypted!
 		
-        format.html { redirect_to @user_link, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else
         format.html { render action: 'new' }

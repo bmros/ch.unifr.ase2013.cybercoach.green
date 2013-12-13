@@ -145,7 +145,7 @@ class SessionsController < ApplicationController
 
       #redirect_to user_link
 	  @user = User.find(user_link.username) #user controller can manage user_link data
-	  redirect_to @user
+	  redirect_to user_path(@user)
 
     end
   end
