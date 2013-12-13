@@ -1,0 +1,37 @@
+<h1>Listing user_links</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Username</th>
+    <th>Encrypted password</th>
+    <th>Salt</th>
+    <th>Realname</th>
+    <th>Email</th>
+    <th>Publicvisible</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @user_links.each do |user_link| %>
+      <tr>
+        <td><%= user_link.username %></td>
+        <td><%= user_link.encrypted_password %></td>
+        <td><%= user_link.salt %></td>
+        <td><%= user_link.realname %></td>
+        <td><%= user_link.email %></td>
+        <td><%= user_link.publicvisible %></td>
+        <td><%= link_to 'Show', user_link %></td>
+        <td><%= link_to 'Edit', edit_user_link_path(user_link) %></td>
+        <td><%= link_to 'Destroy', user_link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User link', new_user_link_path %>

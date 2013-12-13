@@ -1,0 +1,25 @@
+<h1>Subscriptions</h1>
+
+
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>user_link_id</th>
+    <th>sport_link_id</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @subscriptions.each do |subscription| %>
+      <tr>
+        <td><%= subscription.id %></td>
+        <td><%= subscription.user_link_id %></td>
+        <td><%= subscription.sport_link_id %></td>
+      </tr>
+  <% end %>
+  </tbody>
+
+
+
+</table>

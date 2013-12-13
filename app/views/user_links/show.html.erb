@@ -1,0 +1,75 @@
+<div class="wrapper">
+
+<% if ApiToken.find_by_user_link_id(@user_link) == nil %>
+
+
+          <%= link_to 'Please register on FatSecret now', new_user_link_api_token_path(@user_link) %>
+          <% @user_link.api_tokens.each do |api| %>
+              <li><b><%= api.provider.camelize %></b>( token: <%= api.auth_token %>, secret: <%= api.auth_secret %>  </li>
+              <% user_link_apis << api.provider %>
+          <% end %>
+
+
+
+<% else %>
+
+
+
+        <div id="my_container" class="fatsecret_container" ></div>
+
+
+          <%= form_tag fatsecret_auth_path(@user_link), :class => 'form' do %>
+              <div class="header">
+                <h1>Update your weight on FatSecret:</h1>
+                <span>Fill out the form below</span>
+              </div>
+
+              <div class="content">
+                <div class="field">
+                  <%= text_field :username,nil, :class => 'input', :placeholder => "Username" %>
+                </div>
+                <div class="field">
+                  <%= text_field_tag :goal_weight_kg,nil, :class => 'input', :placeholder => "Your goal weight in kg" %>
+                </div>
+                <div class="field">
+                  <%= text_field_tag :current_height_cm,nil, :class => 'input', :placeholder => "Your current height in cm" %>
+                </div>
+                <div class="field">
+                  <%= text_field_tag :current_weight_kg,nil, :class => 'input', :placeholder => "Your current weight in kg" %>
+                </div>
+                <%= hidden_field_tag 'method', 'weight.update' %>
+              </div>
+
+              <div class="footer">
+                <%= submit_tag "Update Weight" , :class => "register"  %>
+              </div>
+          <% end %>
+          </div>
+
+
+
+          <h3>Request Script Session Key:</h3>
+          <%= form_tag fatsecret_auth_path(@user_link) ,:id => 'form1' do %>
+              <%= hidden_field_tag 'method', 'profile.request_script_session_key' %>
+              <%= hidden_field_tag 'cookie', 'true' %>
+              <%= submit_tag("Get Key") %>
+          <% end %>
+
+
+      <h3>Request Today's Exercises:</h3>
+      <%= form_tag fatsecret_auth_path(@user_link) ,:id => 'form1' do %>
+          <%= hidden_field_tag 'method', 'exercise_entries.get' %>
+          <%= submit_tag("Get Them") %>
+      <% end %>
+
+
+
+<% end %>
+
+
+
+<hr />
+
+
+<%= link_to 'Edit', edit_user_link_path(@user_link) %> |
+<%= link_to 'Back', user_links_path %>

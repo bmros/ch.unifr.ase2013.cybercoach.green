@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cybercoach</title>
+
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  
+  <script src="http://platform.fatsecret.com/js?key=2335333d72d249908b349d841c398027&theme=blank"></script>
+  
+  <script>
+      fatsecret.setContainer("my_container");
+      fatsecret.setCanvas("home");
+  </script>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+  <%= render "layouts/header" %>
+  <%= render "layouts/menu" %>
+  
+  <div id="error"><%= flash[:error]%></div>
+  
+  <div id="page"><%= yield %></div>
+
+	
+  <%= render "layouts/footer" %>
+
+</body>
+</html>

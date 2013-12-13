@@ -1,0 +1,27 @@
+<h1>Listing sport_links</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sport_links.each do |sport_link| %>
+      <tr>
+        <td><%= sport_link.name %></td>
+        <td><%= link_to 'Show', sport_link %></td>
+        <td><%= link_to 'Edit', edit_sport_link_path(sport_link) %></td>
+        <td><%= link_to 'Destroy', sport_link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sport link', new_sport_link_path %>

@@ -1,0 +1,15 @@
+<div id="menu">
+ <ul>
+  <li><%= link_to "Home", root_path  %></li>
+ <% if session[:current_user_link_id] != nil %>
+  <li><%= link_to "My Exercices", user_path(session[:current_user_link_username])  %></li> 
+  <li><%= link_to "Edit Profile", edit_user_path(session[:current_user_link_username]) %></li>
+  <li><%= link_to "Logout", signout_path %></li>
+ <% else %>
+  <li><%= link_to "Login", signin_path %></li>
+  <li><%= link_to "Register", new_user_path %></li>
+  <% end %>
+
+  
+ </ul>
+</div>

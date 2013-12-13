@@ -1,0 +1,27 @@
+<div class="wrapper">
+
+<% if ApiToken.find_by_user_link_id(@user_link) == nil %>
+
+<div class="form" style="width: 800px; text-align: center; font-size: 40px;">
+
+          <%= link_to 'Please register on FatSecret now', new_user_link_api_token_path(@user_link) %>
+          <% @user_link.api_tokens.each do |api| %>
+              <li><b><%= api.provider.camelize %></b>( token: <%= api.auth_token %>, secret: <%= api.auth_secret %>  </li>
+              <% user_link_apis << api.provider %>
+          <% end %>
+</div>
+
+
+
+<% else %>
+
+
+
+        <div id="my_container" class="fatsecret_container" ></div>
+
+<% end %>
+
+</div>
+
+
+
