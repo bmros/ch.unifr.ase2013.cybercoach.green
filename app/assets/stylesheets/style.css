@@ -25,12 +25,12 @@ BODY STYLING
 }
 
 body {
-	background: url('http://www.demo.amitjakhu.com/login-form/images/bg.png');
+	background: url('bg.png');
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-weight:300;
 	text-align: left;
 	text-decoration: none;
-	color: #fff;
+	color: #444;
 	margin: 0 auto;
 	width: 1200px;
 }

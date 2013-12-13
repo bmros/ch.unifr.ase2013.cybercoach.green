@@ -6,6 +6,7 @@
   <%= stylesheet_link_tag "application", :media => "all" %>
   
   <script src="http://platform.fatsecret.com/js?key=2335333d72d249908b349d841c398027&theme=blank"></script>
+  
   <script>
       fatsecret.setContainer("my_container");
       fatsecret.setCanvas("home");
@@ -14,9 +15,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+
   <%= render "layouts/header" %>
   <%= render "layouts/menu" %>
-    <%= yield %>
+  
+  <div id="page"><%= yield %></div>
+
+	
   <%= render "layouts/footer" %>
 
 </body>

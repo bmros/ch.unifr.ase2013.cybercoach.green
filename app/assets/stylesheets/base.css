@@ -4,9 +4,19 @@ a {
  text-transform: uppercase;
 }
 
+#page{
+ //background-color: #eee;
+ //background-image: url('b.png');
+ padding: 10px;
+  border-radius: 5px;
+ box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+ -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+ -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
 
-#menu, #footer, #my_container {
- margin-bottom : 10px;
+
+#menu, #footer {
+ margin-bottom: 10px; margin-top: 10px;
  font-size : 12px;
  text-align : center;
  background: #f3f3f3;
@@ -18,10 +28,7 @@ a {
  color: #8ebdcb;
 }
 
-#my_container{
- text-align: left;
- background-image: url('b.png');
-}
+
 
  
 #menu ul {
