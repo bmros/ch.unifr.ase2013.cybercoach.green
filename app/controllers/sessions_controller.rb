@@ -122,8 +122,8 @@ class SessionsController < ApplicationController
    # session_key =
 
     if user_link.nil?
-      flash.now[:error] = "Combinaison Email/Mot de passe invalide."
-      @titre = "S'identifier"
+      flash.now[:error] = "Username/Password not valid."
+      #@titre = "S'identifier"
       render 'new'
     else
       sign_in user_link
@@ -151,7 +151,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    #getexerciseswoparams FIXME ----------------------------------------------------------------
+    getexerciseswoparams
     session[:current_user_link_id] = nil
     session[:current_user_link_password] = nil
     session[:current_user_link_username] = nil

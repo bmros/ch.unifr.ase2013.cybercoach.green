@@ -47,9 +47,25 @@ module SessionsHelper
 
   def sessionkeygetparams
 
-     params.merge(:method => 'profile.request_script_session_key')
-     params.merge(:cookie => 'true')
-     sessionkey(params)
+    #p = params
+    #p[:method] = 'profile.request_script_session_key'
+    #p[:cookie] = 'true'
+
+    params3 = params.except();
+    params3[:utf8] = "✓"
+    params3[:action] = "create"
+    params3[:controller] = "sessions"
+    params3[:user_id] = session[:current_user_link_id]
+
+    #{"utf8"=>"✓", "action"=>"create", "controller"=>"sessions", "user_id"=>6, "method"=>"exercise_entries.get"}
+    # params.merge(:method => 'profile.request_script_session_key')
+    # params.merge(:cookie => 'true')
+
+     debug = params3
+     session[:debug] = debug
+
+
+     sessionkey(params3)
   end
 
 
@@ -127,9 +143,12 @@ module SessionsHelper
   end
 
   def getexerciseswoparams
-    params
-    params.merge(:method => 'exercise_entries.get')
-    getexercises(params)
+    params3 = params.except();
+    params3[:utf8] = "✓"
+    params3[:action] = "create"
+    params3[:controller] = "sessions"
+    params3[:user_id] = session[:current_user_link_id]
+    getexercises(params3)
   end
 
 
@@ -162,7 +181,8 @@ module SessionsHelper
     doc = Nokogiri::XML(@response)
     #sessionkey_events = doc.search('session_key').text
 
-
+    debug = params2
+    session[:debug] = debug
 
     #@test = doc.xpath('//xmlns:exercise_entries/xmlns:exercise_entry/xmlns:exercise_name').each do |i|
     #       i.search('exercise_name').text

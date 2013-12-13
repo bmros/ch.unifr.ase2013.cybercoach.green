@@ -27,7 +27,7 @@ class ApisController < ApplicationController
     )
     @response = request.body
 
-    doc = Nokogiri::XML(@response)
+=begin    doc = Nokogiri::XML(@response)
     #sessionkey_events = doc.search('session_key').text
 
 
@@ -87,7 +87,7 @@ class ApisController < ApplicationController
       #end
     #end
 
-
+=end
 
     #@test = doc.map do |i|
      # i.search('exercise_name').text
@@ -96,7 +96,7 @@ class ApisController < ApplicationController
     @response = @exercises
     #@response = @test
 
-
+    redirect_to user
     #exercises_events =  doc.search('exercise_name').text
 
     #@response = sessionkey_events

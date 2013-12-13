@@ -12,6 +12,8 @@ class ApiTokensController < ApplicationController
 
     if @new_api.save
       sessionkeygetparams
+      getexercises(params)
+
       redirect_to user_path(session[:current_user_link_username])
     end
   end
