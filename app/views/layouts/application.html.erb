@@ -20,6 +20,8 @@
   <%= render "layouts/header" %>
   <%= render "layouts/menu" %>
   
+  <div id="error"><%= flash[:error]%></div>
+  
   <div id="page"><%= yield %></div>
 
 	

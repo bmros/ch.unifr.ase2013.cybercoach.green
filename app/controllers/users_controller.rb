@@ -102,11 +102,11 @@ include SessionsHelper
   # DELETE /users/1.json
   def destroy
     @user.destroy
-    @user_link = UserLink.find(session[:current_user_link_id])
-	@user_link.destroy
+    #@user_link = UserLink.find(session[:current_user_link_id])
+	#@user_link.destroy
 	
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_to root_path }
       format.json { head :no_content }
     end
   end
@@ -117,7 +117,7 @@ include SessionsHelper
     Api::Base.user = 	session[:current_user_link_username]
     Api::Base.password = session[:current_user_link_password]
 
-    #@user = User.find("a")
+
     @user = User.find(params[:id])
 	@user_link = UserLink.find_by_username(params[:id])
 	

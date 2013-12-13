@@ -13,11 +13,3 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-
-submitForms = function() {
-    document.getElementById("form1").submit();
-    document.getElementById("form2").submit();
-
-
-
-}

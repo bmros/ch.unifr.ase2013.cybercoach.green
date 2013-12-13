@@ -1,4 +1,3 @@
-<%= flash[:error]%>
 <div class="wrapper">
   <%= form_for :session, :url => sessions_path,:html => {:name => 'form1', :class => 'form'}  do |f| %>
       <div class="header">
@@ -23,7 +22,6 @@
 </div>
 <div class="gradient"></div>
 
-<input type="button" value="Login" class="button" onclick="document.forms['form1'].submit();" />
 
 
 

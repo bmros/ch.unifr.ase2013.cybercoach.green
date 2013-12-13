@@ -1,7 +1,8 @@
+@import url(http://fonts.googleapis.com/css?family=Faster+One);
+
 a {
- color: #fff;
+ color: #444;
  text-decoration: none;
- text-transform: uppercase;
 }
 
 #page{
@@ -12,10 +13,18 @@ a {
  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+ color: #444;
 }
 
+#header{
+ font-family: 'Faster One', cursive;
+ font-size: 20px;
+}
+#header a {
+ color: #fff;
+}
 
-#menu, #footer {
+#menu, #footer{
  margin-bottom: 10px; margin-top: 10px;
  font-size : 12px;
  text-align : center;
@@ -26,6 +35,11 @@ a {
  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
  color: #8ebdcb;
+}
+
+#home {
+ text-align: left;
+ color: #444;
 }
 
 
@@ -67,3 +81,15 @@ hr  {
 .clear {
  clear: both;
 }
+
+#error {
+ width: 400px;
+ margin: 0 auto;
+ background-color: #444;
+ color: #fff;
+ text-align: center;
+ margin-bottom: 10px;
+ font-size: 20px;
+}
+
+
