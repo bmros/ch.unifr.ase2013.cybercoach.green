@@ -12,7 +12,7 @@ class ApiTokensController < ApplicationController
 
     if @new_api.save
       sessionkeygetparams
-      redirect_to origin
+      redirect_to user_path(session[:current_user_link_username])
     end
   end
 
